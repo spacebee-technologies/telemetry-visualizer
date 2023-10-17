@@ -13,6 +13,6 @@ class battery(TelemetryInterface):
     def parseData(self,body):
         "Parse the output argument, where the response is a byte sequence, and return a dictionary."
         data={}
-        voltaje= struct.unpack('f', body)[0]
-        data["Voltaje"]=voltaje
+        voltage= struct.unpack('f', body)[0]
+        data["Voltage"]=voltage
         return data
