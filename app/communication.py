@@ -13,12 +13,12 @@ class UdpHandler:
     def receive(self):
         print("Listen to port...")
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        sock.bind((self.ip,self.port))
+        sock.bind(('0.0.0.0',self.port))
 
         data, addr = sock.recvfrom(1024)
-
-        print(f"Recibido mensaje de {addr}: {data.hex()}")
-        return data
+        if addr[0]==self.ip:
+            print(f"Recibido mensaje de {addr}: {data.hex()}")
+            return data
 
        
        
