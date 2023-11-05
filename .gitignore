@@ -1,2 +1,5 @@
 myenv/
 influxdb_data/
+__pycache__/
+*.pyc
+*.pyo
