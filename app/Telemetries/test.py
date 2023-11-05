@@ -2,17 +2,19 @@ from telemetry_interface import TelemetryInterface
 import struct
 
 
-class battery(TelemetryInterface):
+class accelerometer(TelemetryInterface):
     def __init__(self):
-        self.name="Battery"
-        self.help=""
-        self.operation=2
+        self.name="Test"
+        self.operation=0
         self.area_version=0
+
+
 
 
     def parseData(self,body):
         "Parse the output argument, where the response is a byte sequence, and return a dictionary."
         data={}
-        voltage= struct.unpack('<f', body)[0]
-        data["Voltage"]=voltage
+        data["message"] = body.decode('utf-8')
         return data
+
+
