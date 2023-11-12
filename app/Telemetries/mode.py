@@ -4,7 +4,7 @@ import struct
 mode_enum={
   0:"OFF",
   1:"MANUAL",
-  3:"AUTO"
+  2:"AUTO"
 }
 
 
