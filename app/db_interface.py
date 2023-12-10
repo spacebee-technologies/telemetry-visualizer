@@ -30,5 +30,4 @@ class DB_Interface:
         write_api = self.client.write_api(write_options=SYNCHRONOUS)
         write_api.write(bucket=self.bucket, record=data)
 
-        print("------------------------")
-        print("Finish")
+        print("--Database writed--")
