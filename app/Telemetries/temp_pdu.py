@@ -2,17 +2,17 @@ from telemetry_interface import TelemetryInterface
 import struct
 
 
-class battery(TelemetryInterface):
+class tempPdu(TelemetryInterface):
     def __init__(self):
-        self.name="Battery [V]"
+        self.name="Temperature PDU [°C]"
         self.help=""
-        self.operation=2
+        self.operation=14
         self.area_version=0
 
 
     def parseData(self,body):
         "Parse the output argument, where the response is a byte sequence, and return a dictionary."
         data={}
-        voltage= struct.unpack('<f', body)[0]
-        data["Voltage"]=voltage
+        temp= struct.unpack('<f', body)[0]
+        data["Temperature"]=temp
         return data
